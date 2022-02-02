@@ -1,5 +1,5 @@
 project1 = "Project ABC"
-funding1 = 1000
+# funding1 = 1000
 
 project2 = "Project MLN"
 funding2 = 1500
@@ -7,8 +7,10 @@ funding2 = 1500
 project3 = "Project XYZ"
 funding3 = 2000
 
-puts "Project #{project1} has #{funding1} in funding."
-puts "Project #{project2} has #{funding2} in funding."
-puts "Project #{project3} has #{funding3} in funding."
+def introduce(project, funding=1000)
+  "Project #{project} has #{funding} in funding."
+end
 
-puts "Projects:\n\t#{project1}\n\t#{project2}\n\t#{project3}"
+puts introduce(project1)
+puts introduce(project2, funding2)
+puts introduce(project3, funding3)
