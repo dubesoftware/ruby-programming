@@ -1,4 +1,7 @@
 class Project
+  attr_accessor :name
+  attr_reader :initial_funding_amount, :target_funding_amount
+  
   def initialize(name, initial_funding_amount=1000, target_funding_amount)
     @name = name
     @initial_funding_amount = initial_funding_amount
@@ -27,6 +30,10 @@ class Project
   def remove_from_funds(amount)
     @initial_funding_amount -= amount
     "Project #{@name} lost #{amount} funds!"
+  end
+  
+  def total_funding_still_needed
+    @target_funding_amount - @initial_funding_amount
   end
 end
 
