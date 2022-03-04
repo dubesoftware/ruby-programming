@@ -40,9 +40,29 @@ end
 project1 = Project.new("LMN", 500, 3000)
 project2 = Project.new("XYZ", 25, 75)
 project3 = Project.new("CDE", 75)
-puts project1
-puts project1.remove_funds
-puts project2.add_funds
-puts project1
-puts project2
-puts project3
+projects = [project1, project2, project3]
+
+puts projects
+
+projects.each do |project|
+  puts project.target_funding_amount
+end
+
+projects.each do |project|
+  project.add_funds
+  project.remove_funds
+end
+
+puts projects
+
+puts "----"
+projects.each do |project|
+  if project.target_funding_amount > project.initial_funding_amount
+    projects.delete(project)
+  end
+end
+
+project4 = Project.new("PRJ", 200)
+projects.push(project4)
+
+puts projects
