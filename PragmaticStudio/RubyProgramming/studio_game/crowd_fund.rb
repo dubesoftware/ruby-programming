@@ -14,26 +14,49 @@ class Project
   
   def add_funds
     @initial_funding_amount += 25
-    "Project #{@name} got some funds!"
+    puts "Project #{@name} got some funds!"
   end
   
   def remove_funds
     @initial_funding_amount -= 15
-    "Project #{@name} lost some funds!"
+    puts "Project #{@name} lost some funds!"
   end
   
   def add_to_funds(amount)
     @initial_funding_amount += amount
-    "Project #{@name} got #{amount} funds!"
+    puts "Project #{@name} got #{amount} funds!"
   end
   
   def remove_from_funds(amount)
     @initial_funding_amount -= amount
-    "Project #{@name} lost #{amount} funds!"
+    puts "Project #{@name} lost #{amount} funds!"
   end
   
   def total_funding_still_needed
     @target_funding_amount - @initial_funding_amount
+  end
+end
+
+class ProjectManager
+  attr_reader :title
+  
+  def initialize(title)
+    @title = title
+    @projects = []
+  end
+  
+  def add_project(project)
+    @projects << project
+  end
+  
+  def request_funding
+    puts "There are #{@projects.size} projects in #{title}:"
+    puts @projects
+    @projects.each do |project|
+      project.add_to_funds(1000)
+      project.remove_funds
+      puts project
+    end
   end
 end
 
@@ -42,27 +65,8 @@ project2 = Project.new("XYZ", 25, 75)
 project3 = Project.new("CDE", 75)
 projects = [project1, project2, project3]
 
-puts projects
-
+project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
 projects.each do |project|
-  puts project.target_funding_amount
+  project_manager.add_project(project)
 end
-
-projects.each do |project|
-  project.add_funds
-  project.remove_funds
-end
-
-puts projects
-
-puts "----"
-projects.each do |project|
-  if project.target_funding_amount > project.initial_funding_amount
-    projects.delete(project)
-  end
-end
-
-project4 = Project.new("PRJ", 200)
-projects.push(project4)
-
-puts projects
+project_manager.request_funding
