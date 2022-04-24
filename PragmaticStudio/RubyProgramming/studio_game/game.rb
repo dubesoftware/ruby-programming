@@ -4,7 +4,7 @@ class Game
   attr_reader :title
   
   def initialize(title)
-    @title = title
+    @title = title.capitalize
     @players = []
   end
   
