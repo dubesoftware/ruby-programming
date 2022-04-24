@@ -1,7 +1,7 @@
-require 'rspec'
+require_relative 'spec_helper'
 require_relative 'game'
 
-RSpec.describe Game do
+describe Game do
   
   it "has capitalized title" do
     game = Game.new("goonies")
