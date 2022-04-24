@@ -8,4 +8,8 @@ RSpec.describe Game do
     
     game.title.should == "Goonies"
   end
+  
+  it 'does something'
+  
+  it 'does something else'
 end
