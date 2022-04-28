@@ -5,11 +5,9 @@ require_relative 'player'
 describe Player do
   
   before do
+    $stdout = StringIO.new
     @initial_health = 150
     @player = Player.new("larry", @initial_health)
-    if __FILE__ == $0
-      $stdout = StringIO.new
-    end
   end
   
   it "has a capitalized name" do
