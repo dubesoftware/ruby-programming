@@ -8,7 +8,7 @@ describe Player do
     @initial_health = 150
     @player = Player.new("larry", @initial_health)
     if __FILE__ == $0
-      @stdout = StringIO.new
+      $stdout = StringIO.new
     end
   end
   
