@@ -1,6 +1,7 @@
 require_relative 'spec_helper'
 require_relative 'game'
 
+
 describe Game do
   
   it "has capitalized title" do
@@ -8,8 +9,5 @@ describe Game do
     
     game.title.should == "Goonies"
   end
-  
-  it 'does something'
-  
-  it 'does something else'
+
 end
