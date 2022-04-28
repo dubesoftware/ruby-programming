@@ -9,5 +9,4 @@ describe Game do
     
     game.title.should == "Goonies"
   end
-
 end
