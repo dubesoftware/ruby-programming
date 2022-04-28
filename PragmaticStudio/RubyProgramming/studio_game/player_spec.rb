@@ -12,7 +12,7 @@ describe Player do
     end
   end
   
-  it 'has a capitalized name' do
+  it "has a capitalized name" do
     @player.name.should == "Larry" 
   end
   
