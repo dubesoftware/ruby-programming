@@ -15,7 +15,9 @@ describe Project do
     @project.initial_funding_amount.should == 1000
   end
   
-  it "computes the total funding outstanding as the target funding amount minus the funding amount"
+  it "computes the total funding outstanding as the target funding amount minus the funding amount" do
+    @project.total_funding_still_needed.should == @target_funding_amount - @initial_funding_amount
+  end
   
   it "increases funds by 25 when funds are added"
   
