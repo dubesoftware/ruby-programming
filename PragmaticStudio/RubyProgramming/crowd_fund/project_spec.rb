@@ -19,9 +19,28 @@ describe Project do
     @project.total_funding_still_needed.should == @target_funding_amount - @initial_funding_amount
   end
   
-  it "increases funds by 25 when funds are added"
+  it "increases funds by 25 when funds are added" do
+    @project.add_funds
+    
+    @project.current_funding_amount.should == @initial_funding_amount + 25
+  end
   
-  it "decreases funds by 15 when funds are removed"
+  it "decreases funds by 15 when funds are removed" do
+    @project.remove_funds
+    
+    @project.current_funding_amount.should == @initial_funding_amount - 15
+  end
   
-  it "has a default value of 0 for funding amount"
+  context "created with a default value of 0 for funding amount" do
+    before do
+      $stdout = StringIO.new
+      @name = "Test Project"
+      @target_funding_amount = 5000
+      @project = Project.new(@name, @target_funding_amount)
+    end
+    
+    it "has a default value of 0 for funding amount" do
+      @project.initial_funding_amount.should == 0
+    end
+  end
 end
