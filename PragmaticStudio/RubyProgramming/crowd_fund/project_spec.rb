@@ -33,9 +33,6 @@ describe Project do
   
   context "created with a default value of 0 for funding amount" do
     before do
-      $stdout = StringIO.new
-      @name = "Test Project"
-      @target_funding_amount = 5000
       @project = Project.new(@name, @target_funding_amount)
     end
     
