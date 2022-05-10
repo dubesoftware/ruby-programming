@@ -15,20 +15,48 @@ describe Project do
     @project.initial_funding_amount.should == 1000
   end
   
-  it "computes the total funding outstanding as the target funding amount minus the funding amount" do
-    @project.total_funding_still_needed.should == @target_funding_amount - @initial_funding_amount
+  it "computes the total funding outstanding as the target funding amount minus the current funding amount" do
+    @project.total_funding_still_needed.should == @project.target_funding_amount - @project.current_funding_amount
   end
   
   it "increases funds by 25 when funds are added" do
+    Die.any_instance.stub(:roll).and_return(2)
+    
     @project.add_funds
     
     @project.current_funding_amount.should == @initial_funding_amount + 25
   end
   
   it "decreases funds by 15 when funds are removed" do
+    Die.any_instance.stub(:roll).and_return(1)
+    
     @project.remove_funds
     
     @project.current_funding_amount.should == @initial_funding_amount - 15
+  end
+  
+  it "adds funds to a project when an even number is rolled" do
+    Die.any_instance.stub(:roll).and_return(2)
+    
+    @project.add_funds
+    
+    @project.current_funding_amount.should == @initial_funding_amount + 25
+  end
+  
+  it "removes funds from a project when an odd number is rolled" do
+    Die.any_instance.stub(:roll).and_return(1)
+    
+    @project.remove_funds
+    
+    @project.current_funding_amount.should == @initial_funding_amount - 15
+  end
+  
+  it "is fully funded when the current funding amount equals or exceeds the target funding amount" do
+    Die.any_instance.stub(:roll).and_return(2)
+    
+    @project.add_to_funds(4000)
+    
+    @project.should be_fully_funded
   end
   
   context "created with a default value of 0 for funding amount" do

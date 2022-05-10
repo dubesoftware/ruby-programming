@@ -6,7 +6,7 @@ describe Player do
   
   before do
     $stdout = StringIO.new
-    @initial_health = 150
+    @initial_health = 100
     @player = Player.new("larry", @initial_health)
   end
   
@@ -15,15 +15,15 @@ describe Player do
   end
   
   it "has an initial health" do
-    @player.health.should == 150
+    @player.health.should == 100
   end
 
   it "has a string representation" do
-    @player.to_s.should == "I'm Larry with a health of 150 and a score of 155."
+    @player.to_s.should == "I'm Larry with a health of 100 and a score of 105."
   end
 
   it "computes a score as the sum of its health and length of name" do
-    @player.score.should == (150 + 5)
+    @player.score.should == (100 + 5)
   end
 
   it "increases health by 15 when w00ted" do
@@ -36,5 +36,25 @@ describe Player do
     @player.blam
     
     @player.health.should == @initial_health - 10
+  end
+  
+  context "with a health greater than 100" do
+    before do
+      @player = Player.new("larry", 150)
+    end
+    
+    it "is strong" do
+      @player.should be_strong
+    end
+  end
+  
+  context "with a health less than 100" do
+    before do
+      @player = Player.new("larry", 90)
+    end
+    
+    it "is wimpy" do
+      @player.should_not be_strong
+    end
   end
 end

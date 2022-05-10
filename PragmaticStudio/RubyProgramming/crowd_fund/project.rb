@@ -1,3 +1,5 @@
+require_relative 'die'
+
 class Project
   attr_accessor :name
   attr_reader :initial_funding_amount, :current_funding_amount, :target_funding_amount
@@ -6,6 +8,7 @@ class Project
     @name = name
     @current_funding_amount = @initial_funding_amount = initial_funding_amount
     @target_funding_amount = target_funding_amount
+    @die = Die.new
   end
   
   def to_s
@@ -13,13 +16,19 @@ class Project
   end
   
   def add_funds
-    @current_funding_amount += 25
-    puts "Project #{@name} got some funds!"
+    case @die.roll % 2
+    when 0
+      @current_funding_amount += 25
+      puts "Project #{@name} got some funds!"
+    end
   end
   
   def remove_funds
-    @current_funding_amount -= 15
-    puts "Project #{@name} lost some funds!"
+    case @die.roll % 2
+    when 1
+      @current_funding_amount -= 15
+      puts "Project #{@name} lost some funds!"
+    end
   end
   
   def add_to_funds(amount)
@@ -34,5 +43,9 @@ class Project
   
   def total_funding_still_needed
     @target_funding_amount - @current_funding_amount
+  end
+  
+  def fully_funded?
+    @current_funding_amount >= target_funding_amount
   end
 end
