@@ -8,7 +8,6 @@ class Project
     @name = name
     @current_funding_amount = @initial_funding_amount = initial_funding_amount
     @target_funding_amount = target_funding_amount
-    @die = Die.new
   end
   
   def to_s
@@ -16,19 +15,13 @@ class Project
   end
   
   def add_funds
-    case @die.roll % 2
-    when 0
-      @current_funding_amount += 25
-      puts "Project #{@name} got some funds!"
-    end
+    @current_funding_amount += 25
+    puts "Project #{@name} got some funds!"
   end
   
   def remove_funds
-    case @die.roll % 2
-    when 1
-      @current_funding_amount -= 15
-      puts "Project #{@name} lost some funds!"
-    end
+    @current_funding_amount -= 15
+    puts "Project #{@name} lost some funds!"
   end
   
   def add_to_funds(amount)

@@ -1,3 +1,5 @@
+require_relative 'funding_round'
+
 class ProjectManager
   attr_reader :title
   
@@ -14,8 +16,7 @@ class ProjectManager
     puts "There are #{@projects.size} projects in #{title}:"
     puts @projects
     @projects.each do |project|
-      project.add_to_funds(1000)
-      project.remove_funds
+      FundingRound.fund(project)
       puts project
     end
   end
