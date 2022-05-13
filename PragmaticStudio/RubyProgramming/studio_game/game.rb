@@ -1,3 +1,5 @@
+require_relative 'game_turn'
+
 class Game
   attr_reader :title
   
