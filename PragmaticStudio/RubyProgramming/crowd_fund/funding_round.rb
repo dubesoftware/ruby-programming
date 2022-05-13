@@ -4,7 +4,7 @@ module FundingRound
   def self.fund(project)
     die = Die.new
     
-    case @die.roll % 2
+    case die.roll % 2
     when 0
       project.add_funds
     when 1
