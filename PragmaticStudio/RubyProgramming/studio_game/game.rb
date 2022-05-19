@@ -12,7 +12,7 @@ class Game
     @players << player
   end
   
-  def play
+  def play(rounds)
     puts "There are #{@players.size} players in #{title}:"
     puts @players
     
