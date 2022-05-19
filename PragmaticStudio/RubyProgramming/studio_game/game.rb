@@ -39,10 +39,8 @@ class Game
       puts "#{p.name} (#{p.health})"
     end
     
-    sorted_players = @players.sort
-    
     puts "\n#{@title} High Scores:"
-    sorted_players.each do |p|
+    @players.sort.each do |p|
       formatted_name = p.name.ljust(20, '.')
       puts "#{formatted_name} #{p.score}"
     end    
