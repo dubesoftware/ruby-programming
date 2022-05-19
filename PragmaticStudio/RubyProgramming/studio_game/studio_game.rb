@@ -11,4 +11,4 @@ knuckleheads = Game.new("Knuckleheads")
 players.each do |player|
   knuckleheads.add_player(player)
 end
-knuckleheads.play
+knuckleheads.play(3)
