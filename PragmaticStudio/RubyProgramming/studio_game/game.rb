@@ -23,4 +23,8 @@ class Game
       end
     end
   end
+  
+  def print_stats
+    strong_players, wimpy_players = @players.partition { |p| p.strong?  }
+  end
 end
