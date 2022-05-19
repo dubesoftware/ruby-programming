@@ -12,3 +12,4 @@ players.each do |player|
   knuckleheads.add_player(player)
 end
 knuckleheads.play(3)
+knuckleheads.print_stats
