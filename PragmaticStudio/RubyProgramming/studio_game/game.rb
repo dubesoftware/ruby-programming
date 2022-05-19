@@ -31,12 +31,12 @@ class Game
     
     puts "\n#{strong_players.size} strong players:"
     strong_players.each do |p|
-      puts "#{p.name} #{p.health}"
+      puts "#{p.name} (#{p.health})"
     end
     
-    puts "\n#{wimpy_players.size}} wimpy players:"
+    puts "\n#{wimpy_players.size} wimpy players:"
     wimpy_players.each do |p|
-      puts "#{p.name} #{p.health}"
+      puts "#{p.name} (#{p.health})"
     end
   end
 end
