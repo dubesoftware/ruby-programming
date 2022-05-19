@@ -24,6 +24,10 @@ class Game
     end
   end
   
+  def print_name_and_health(player)
+    puts "#{player.name} (#{player.health})"
+  end
+  
   def print_stats    
     puts "\n#{@title} Statistics:"
     
@@ -31,12 +35,12 @@ class Game
     
     puts "\n#{strong_players.size} strong players:"
     strong_players.each do |p|
-      puts "#{p.name} (#{p.health})"
+      print_name_and_health(p)
     end
     
     puts "\n#{wimpy_players.size} wimpy players:"
     wimpy_players.each do |p|
-      puts "#{p.name} (#{p.health})"
+      print_name_and_health(p)
     end
     
     puts "\n#{@title} High Scores:"
