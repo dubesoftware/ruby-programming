@@ -39,7 +39,7 @@ class Game
       puts "#{p.name} (#{p.health})"
     end
     
-    sorted_players = @players.sort { |a, b| b.score <=> a.score }
+    sorted_players = @players.sort
     
     puts "\n#{@title} High Scores:"
     sorted_players.each do |p|
