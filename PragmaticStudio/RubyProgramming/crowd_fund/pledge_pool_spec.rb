@@ -31,7 +31,7 @@ describe PledgePool do
     PledgePool::PLEDGES[1].should == Pledge.new(:silver, 75)
   end
 
-  it "has a gold pledge worth $50" do
+  it "has a gold pledge worth $100" do
     PledgePool::PLEDGES[2].should == Pledge.new(:gold, 100)
   end
 end
