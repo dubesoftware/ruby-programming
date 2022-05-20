@@ -13,9 +13,20 @@ class ProjectManager
     @projects << project
   end
   
+  def print_pledge_amounts
+    pledges = PledgePool::PLEDGES
+    
+    puts "\nThere are #{pledges.size} possible pledge amounts:"
+    pledges.each do |pledge|
+      puts "\tA #{pledge.name} pledge is worth $#{pledge.amount}."
+    end
+  end
+  
   def request_funding(rounds)
     puts "There are #{@projects.size} projects in #{title}:"
     puts @projects
+    
+    print_pledge_amounts    
     puts "\n"
 
     1.upto(rounds) do
