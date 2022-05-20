@@ -46,13 +46,5 @@ describe TreasureTrove do
   it "has a crowbar worth 400 points" do
     TreasureTrove::TREASURES[5].should == Treasure.new(:crowbar, 400)
   end
-  
-  it "returns a random treasure" do
-    treasure = TreasureTrove.random
 
-    TreasureTrove::TREASURES.should include(treasure)
-
-    # or use alternate expectation syntax:
-    # expect(TreasureTrove::TREASURES).to include(treasure)
-  end
 end
