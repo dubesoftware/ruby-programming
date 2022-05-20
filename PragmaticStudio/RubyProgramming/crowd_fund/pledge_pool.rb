@@ -7,4 +7,8 @@ module PledgePool
     Pledge.new(:silver, 75),
     Pledge.new(:gold, 100)
   ]
+  
+  def self.random
+    PLEDGES.sample
+  end
 end
