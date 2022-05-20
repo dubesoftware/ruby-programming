@@ -1,4 +1,5 @@
 require_relative 'funding_round'
+require_relative 'pledge_pool'
 
 class ProjectManager
   attr_reader :title
