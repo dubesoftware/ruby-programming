@@ -15,6 +15,8 @@ class ProjectManager
   
   def request_funding(rounds)
     puts "There are #{@projects.size} projects in #{title}:"
+    puts @projects
+    puts "\n"
 
     1.upto(rounds) do
       @projects.each do |project|
