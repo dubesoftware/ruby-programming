@@ -22,9 +22,9 @@ describe Project do
   it "increases funds by 25 when funds are added" do
     Die.any_instance.stub(:roll).and_return(2)
     
-    @project.add_funds(2)
+    @project.add_funds
     
-    @project.current_funding_amount.should == @initial_funding_amount + (25 * 2)
+    @project.current_funding_amount.should == @initial_funding_amount + 25
   end
   
   it "decreases funds by 15 when funds are removed" do
@@ -38,7 +38,7 @@ describe Project do
   it "adds funds to a project when an even number is rolled" do
     Die.any_instance.stub(:roll).and_return(2)
     
-    @project.add_funds(2)
+    @project.add_funds
     
     @project.current_funding_amount.should == @initial_funding_amount + 25
   end
