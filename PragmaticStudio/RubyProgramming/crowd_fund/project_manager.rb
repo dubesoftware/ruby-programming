@@ -22,4 +22,24 @@ class ProjectManager
       end
     end
   end
+  
+  def print_name_and_current_funding_amount(project)
+    puts "#{project.name} (#{project.current_funding_amount})"
+  end
+  
+  def print_stats 
+    puts "\n#{@title} Statistics:"
+    
+    fully_funded_projects, under_funded_projects = @projects.partition { |p| p.fully_funded?  }
+    
+    puts "\n#{fully_funded_projects.size} fully-funded projects:"
+    fully_funded_projects.each do |p|
+      print_name_and_current_funding_amount(p)
+    end
+    
+    puts "\n#{under_funded_projects.size} under-funded projects:"
+    under_funded_projects.each do |p|
+      print_name_and_current_funding_amount(p)
+    end
+  end
 end
