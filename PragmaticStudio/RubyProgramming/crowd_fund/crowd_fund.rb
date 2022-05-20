@@ -10,4 +10,4 @@ project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
 projects.each do |project|
   project_manager.add_project(project)
 end
-project_manager.request_funding
+project_manager.request_funding(3)

@@ -12,12 +12,14 @@ class ProjectManager
     @projects << project
   end
   
-  def request_funding
+  def request_funding(rounds)
     puts "There are #{@projects.size} projects in #{title}:"
-    puts @projects
-    @projects.each do |project|
-      FundingRound.fund(project)
-      puts project
+
+    1.upto(rounds) do
+      @projects.each do |project|
+        FundingRound.fund(project)
+        puts project
+      end
     end
   end
 end
