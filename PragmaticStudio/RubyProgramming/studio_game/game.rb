@@ -27,8 +27,7 @@ class Game
       puts "\nRound: #{round}"
       @players.each do |player|
         GameTurn.take_turn(player)
-        treasure = TreasureTrove.random
-        puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points."
+        puts player
       end
     end
   end
