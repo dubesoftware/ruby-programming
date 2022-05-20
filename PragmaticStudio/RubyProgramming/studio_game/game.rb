@@ -27,7 +27,6 @@ class Game
       puts "\nRound: #{round}"
       @players.each do |player|
         GameTurn.take_turn(player)
-        puts player
       end
     end
   end
