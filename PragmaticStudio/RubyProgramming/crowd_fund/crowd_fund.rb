@@ -11,3 +11,4 @@ projects.each do |project|
   project_manager.add_project(project)
 end
 project_manager.request_funding(3)
+project_manager.print_stats

@@ -41,5 +41,11 @@ class ProjectManager
     under_funded_projects.each do |p|
       print_name_and_current_funding_amount(p)
     end
+    
+    puts "\n#{@title} Projects Needing Contributions:"
+    under_funded_projects.sort { |p| p.total_funding_still_needed }.each do |p|
+      formatted_name = p.name.ljust(20, '.')
+      puts "#{formatted_name} #{p.total_funding_still_needed}"
+    end
   end
 end
