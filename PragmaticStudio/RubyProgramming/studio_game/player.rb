@@ -43,6 +43,10 @@ class Player
     puts "#{@name} found a #{treasure.name} worth #{treasure.points} points."
     puts "#{@name}'s treasures: #{@found_treasures}"
   end
+  
+  def points
+    @found_treasures.values.reduce(0, :+)
+  end
 end
 
 if __FILE__ == $0
