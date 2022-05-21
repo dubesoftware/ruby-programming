@@ -19,6 +19,8 @@ describe Player do
   end
 
   it "has a string representation" do
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    @player.found_treasure(Treasure.new(:hammer, 50))
     @player.to_s.should == "I'm Larry with health = 150, points = 100, and score = 250."
   end
 
