@@ -6,7 +6,7 @@ describe Player do
   
   before do
     $stdout = StringIO.new
-    @initial_health = 100
+    @initial_health = 150
     @player = Player.new("larry", @initial_health)
   end
   
@@ -15,7 +15,7 @@ describe Player do
   end
   
   it "has an initial health" do
-    @player.health.should == 100
+    @player.health.should == 150
   end
 
   it "has a string representation" do
