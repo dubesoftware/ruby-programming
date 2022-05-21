@@ -19,7 +19,7 @@ describe Player do
   end
 
   it "has a string representation" do
-    @player.to_s.should == "I'm Larry with a health of 100 and a score of 105."
+    @player.to_s.should == "I'm Larry with health = 150, points = 100, and score = 250."
   end
 
   it "computes a score as the sum of its health and points" do
