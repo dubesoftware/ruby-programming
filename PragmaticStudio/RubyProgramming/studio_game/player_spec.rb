@@ -22,8 +22,11 @@ describe Player do
     @player.to_s.should == "I'm Larry with a health of 100 and a score of 105."
   end
 
-  it "computes a score as the sum of its health and length of name" do
-    @player.score.should == (100 + 5)
+  it "computes a score as the sum of its health and points" do
+    @player.found_treasure(Treasure.new(:hammer, 50))
+    @player.found_treasure(Treasure.new(:hammer, 50))
+
+    @player.score.should == 250
   end
 
   it "increases health by 15 when w00ted" do
