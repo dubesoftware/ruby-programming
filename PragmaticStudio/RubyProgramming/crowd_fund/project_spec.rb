@@ -15,8 +15,8 @@ describe Project do
     @project.initial_funding_amount.should == 1000
   end
   
-  it "computes the total funding outstanding as the target funding amount minus the current funding amount" do
-    @project.total_funding_still_needed.should == @project.target_funding_amount - @project.current_funding_amount
+  it "computes the total funding outstanding as the target funding amount minus the total funding received" do
+    @project.total_funding_still_needed.should == @project.target_funding_amount - @project.total_funding_received
   end
   
   it "increases funds by 25 when funds are added" do
@@ -51,7 +51,7 @@ describe Project do
     @project.current_funding_amount.should == @initial_funding_amount - 15
   end
   
-  it "is fully funded when the current funding amount equals or exceeds the target funding amount" do
+  it "is fully funded when the total funding amount equals or exceeds the target funding amount" do
     Die.any_instance.stub(:roll).and_return(2)
     
     @project.add_to_funds(4000)
