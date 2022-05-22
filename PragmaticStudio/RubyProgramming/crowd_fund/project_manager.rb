@@ -37,8 +37,8 @@ class ProjectManager
     end
   end
   
-  def print_name_and_current_funding_amount(project)
-    puts "#{project.name} (#{project.current_funding_amount})"
+  def print_name_and_total_funding_received(project)
+    puts "#{project.name} (#{project.total_funding_received})"
   end
   
   def print_stats 
@@ -48,12 +48,12 @@ class ProjectManager
     
     puts "\n#{fully_funded_projects.size} fully-funded projects:"
     fully_funded_projects.each do |p|
-      print_name_and_current_funding_amount(p)
+      print_name_and_total_funding_received(p)
     end
     
     puts "\n#{under_funded_projects.size} under-funded projects:"
     under_funded_projects.each do |p|
-      print_name_and_current_funding_amount(p)
+      print_name_and_total_funding_received(p)
     end
     
     puts "\n#{@title} Projects Needing Contributions:"
