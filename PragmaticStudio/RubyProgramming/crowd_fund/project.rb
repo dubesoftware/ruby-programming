@@ -12,7 +12,7 @@ class Project
   end
   
   def to_s
-    "Project #{@name} has $#{@initial_funding_amount} towards a goal of $#{@target_funding_amount}."
+    "Project #{@name} has $#{@current_funding_amount} towards a goal of $#{@target_funding_amount}."
   end
   
   def add_funds
