@@ -42,4 +42,10 @@ class Project
   def fully_funded?
     @current_funding_amount >= target_funding_amount
   end
+  
+  def received_pledge(pledge)
+    @received_pledges[pledge.name] = pledge.amount
+    puts "#{@name} received a #{pledge.name} worth $#{pledge.amount} dollars."
+    puts "#{@name}'s pledges: #{@received_pledges}"
+  end
 end
