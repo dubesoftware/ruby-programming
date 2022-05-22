@@ -59,6 +59,8 @@ class Game
       puts "#{p.points} grand total points"
     end
     
+    puts "\n#{total_points} total points from treasures found"
+    
     puts "\n#{@title} High Scores:"
     @players.sort.each do |p|
       formatted_name = p.name.ljust(20, '.')
