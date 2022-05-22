@@ -52,4 +52,8 @@ class Project
   def pledges
     @received_pledges.values.reduce(0, :+)
   end
+  
+  def total_funding_received
+    @current_funding_amount + pledges
+  end
 end
