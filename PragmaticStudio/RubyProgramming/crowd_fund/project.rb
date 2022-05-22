@@ -48,4 +48,8 @@ class Project
     puts "#{@name} received a #{pledge.name} worth $#{pledge.amount} dollars."
     puts "#{@name}'s pledges: #{@received_pledges}"
   end
+  
+  def pledges
+    @received_pledges.values.reduce(0, :+)
+  end
 end
