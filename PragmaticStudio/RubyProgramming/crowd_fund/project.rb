@@ -8,7 +8,6 @@ class Project
     @name = name
     @current_funding_amount = @initial_funding_amount = initial_funding_amount
     @target_funding_amount = target_funding_amount
-    @received_pledges = Hash.new(0)
   end
   
   def to_s
