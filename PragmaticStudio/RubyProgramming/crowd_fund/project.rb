@@ -40,7 +40,7 @@ class Project
   end
   
   def fully_funded?
-    @current_funding_amount >= target_funding_amount
+    total_funding_received >= target_funding_amount
   end
   
   def received_pledge(pledge)
