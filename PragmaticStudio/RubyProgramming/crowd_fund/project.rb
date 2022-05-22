@@ -17,12 +17,12 @@ class Project
   
   def add_funds
     @current_funding_amount += 25
-    puts "\nProject #{@name} got more funds!"
+    puts "\nProject #{@name} got $25 more!"
   end
   
   def remove_funds
     @current_funding_amount -= 15
-    puts "\nProject #{@name} lost some funds!"
+    puts "\nProject #{@name} lost $15!"
   end
   
   def add_to_funds(amount)
@@ -45,7 +45,7 @@ class Project
   
   def received_pledge(pledge)
     @received_pledges[pledge.name] = pledge.amount
-    puts "#{@name} received a #{pledge.name} worth $#{pledge.amount} dollars."
+    puts "#{@name} received a #{pledge.name} pledge worth $#{pledge.amount}."
     puts "#{@name}'s pledges: #{@received_pledges}"
   end
   
