@@ -16,12 +16,12 @@ class Project
   
   def add_funds
     @current_funding_amount += 25
-    puts "Project #{@name} got more funds!"
+    puts "\nProject #{@name} got more funds!"
   end
   
   def remove_funds
     @current_funding_amount -= 15
-    puts "Project #{@name} lost some funds!"
+    puts "\nProject #{@name} lost some funds!"
   end
   
   def add_to_funds(amount)
