@@ -13,30 +13,12 @@ class Game
     @players << player
   end
   
-  def play(rounds)
-    puts "There are #{@players.size} players in #{title}:"
-    
-    treasures = TreasureTrove::TREASURES
-    
-    puts "\nThere are #{treasures.size} treasures to be found:"
-    treasures.each do |treasure|
-      puts "A #{treasure.name} is worth #{treasure.points} points"
-    end
-    
-    1.upto(rounds) do |round|
-      puts "\nRound: #{round}"
-      @players.each do |player|
-        GameTurn.take_turn(player)
-      end
-    end
+  def print_name_and_health(player)
+    puts "#{player.name} (#{player.health})"
   end
   
   def total_points
     @players.reduce(0) { |sum, p| sum + p.points }
-  end
-  
-  def print_name_and_health(player)
-    puts "#{player.name} (#{player.health})"
   end
   
   def print_stats    
@@ -65,6 +47,24 @@ class Game
     @players.sort.each do |p|
       formatted_name = p.name.ljust(20, '.')
       puts "#{formatted_name} #{p.score}"
+    end
+  end
+  
+  def play(rounds)
+    puts "There are #{@players.size} players in #{title}:"
+    
+    treasures = TreasureTrove::TREASURES
+    
+    puts "\nThere are #{treasures.size} treasures to be found:"
+    treasures.each do |treasure|
+      puts "A #{treasure.name} is worth #{treasure.points} points"
+    end
+    
+    1.upto(rounds) do |round|
+      puts "\nRound: #{round}"
+      @players.each do |player|
+        GameTurn.take_turn(player)
+      end
     end
   end
 end
