@@ -5,9 +5,7 @@ def conversation
 end
 
 def five_times
-  yield 1
-  yield 2
-  yield 3
-  yield 4
-  yield 5
+  1.upto(5) do |n|
+    yield n
+  end
 end
