@@ -56,7 +56,14 @@ class ProjectManager
       print_name_and_total_funding_received(p)
     end
     
-    puts "\n#{@title} Projects Needing Contributions:"
+    @projects.each do |project|
+      puts "Project #{project.name}'s pledges:"
+      project.each_received_pledge do |pledge|
+        puts "$#{pledge.amount} in #{pledge.name} pledges"
+      end
+    end
+    
+    puts "\n#{@title} Needing Contributions:"
     under_funded_projects.sort { |p| p.total_funding_still_needed }.each do |p|
       formatted_name = p.name.ljust(20, '.')
       puts "#{formatted_name} #{p.total_funding_still_needed}"
