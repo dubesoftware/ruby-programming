@@ -40,6 +40,9 @@ class Game
     
     @players.each do |p|
       puts "\n#{p.name}'s point totals:"
+      p.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
       puts "#{p.points} grand total points"
     end
     
