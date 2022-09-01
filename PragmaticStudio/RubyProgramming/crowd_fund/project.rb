@@ -1,4 +1,5 @@
 require_relative 'die'
+require_relative 'pledge_pool'
 
 class Project
   attr_accessor :name
@@ -58,8 +59,8 @@ class Project
   end
   
   def each_received_pledge
-    @received_pledges.each do |pledge|
-      yield Pledge.new(pledge.name, pledge.amount)
+    @received_pledges.each do |name, amount|
+      yield Pledge.new(name, amount)
     end
   end
 end

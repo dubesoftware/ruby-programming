@@ -57,7 +57,7 @@ class ProjectManager
     end
     
     @projects.each do |project|
-      puts "Project #{project.name}'s pledges:"
+      puts "\nProject #{project.name}'s pledges:"
       project.each_received_pledge do |pledge|
         puts "$#{pledge.amount} in #{pledge.name} pledges"
       end
