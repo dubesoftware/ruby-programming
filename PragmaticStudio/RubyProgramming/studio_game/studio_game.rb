@@ -11,5 +11,7 @@ knuckleheads = Game.new("Knuckleheads")
 players.each do |player|
   knuckleheads.add_player(player)
 end
-knuckleheads.play(3)
+knuckleheads.play(10) do
+  knuckleheads.total_points >= 2000
+end
 knuckleheads.print_stats
