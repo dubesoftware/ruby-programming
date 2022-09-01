@@ -56,4 +56,10 @@ class Project
   def total_funding_received
     @current_funding_amount + pledges
   end
+  
+  def each_received_pledge
+    @received_pledges.each do |pledge|
+      yield Pledge.new(pledge.name, pledge.amount)
+    end
+  end
 end
