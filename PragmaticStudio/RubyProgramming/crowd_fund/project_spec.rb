@@ -1,5 +1,6 @@
 require_relative 'spec_helper'
 require_relative 'project'
+require_relative 'pledge_pool'
 
 describe Project do
 
@@ -57,6 +58,30 @@ describe Project do
     @project.add_to_funds(4000)
     
     @project.should be_fully_funded
+  end
+  
+  it "yields each received pledge and its total amount" do
+    @project.received_pledge(Pledge.new(:bronze, 40))
+    @project.received_pledge(Pledge.new(:silver, 65))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    @project.received_pledge(Pledge.new(:gold, 90))
+    
+    yielded = []
+    @project.each_received_pledge do |pledge|
+      yielded << pledge
+    end
+    
+    yielded.should == [
+      Pledge.new(:bronze, 40),
+      Pledge.new(:silver, 65),
+      Pledge.new(:gold, 720)
+    ]
   end
   
   context "created with a default value of 0 for funding amount" do
