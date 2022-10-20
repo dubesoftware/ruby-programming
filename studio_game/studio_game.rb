@@ -11,7 +11,20 @@ knuckleheads = Game.new("Knuckleheads")
 players.each do |player|
   knuckleheads.add_player(player)
 end
-knuckleheads.play(10) do
-  knuckleheads.total_points >= 2000
+
+loop do
+  puts "\nHow many game rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+  
+  case answer
+  when /^\d+$/
+    knuckleheads.play(answer.to_i) do
+      knuckleheads.total_points >= 2000
+    end
+  when 'quit', 'exit'
+    knuckleheads.print_stats
+    break
+  else
+    puts "Please enter a number or 'quit'"
+  end
 end
-knuckleheads.print_stats
