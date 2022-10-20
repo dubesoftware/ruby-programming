@@ -1,3 +1,4 @@
+require 'csv'
 require_relative 'game_turn'
 require_relative 'treasure_trove'
 
@@ -10,9 +11,13 @@ class Game
   end
   
   def load_players(from_file)
-    File.readlines(from_file).each do |line|
-      add_player(Player.from_csv(line))
+    CSV.foreach(from_file) do |row|
+      player = Player.new(row[0], row[1].to_i)
+      add_player(player)
     end
+    # File.readlines(from_file).each do |line|
+    #   add_player(Player.from_csv(line))
+    # end
   end
   
   def add_player(player)
