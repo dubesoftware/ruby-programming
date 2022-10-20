@@ -8,9 +8,11 @@ player3 = Player.new("curly", 125)
 players = [player1, player2, player3]
 
 knuckleheads = Game.new("Knuckleheads")
-players.each do |player|
-  knuckleheads.add_player(player)
-end
+knuckleheads.load_players(ARGV.shift || "players.csv")
+
+# players.each do |player|
+#   knuckleheads.add_player(player)
+# end
 
 loop do
   puts "\nHow many game rounds? ('quit' to exit)"
