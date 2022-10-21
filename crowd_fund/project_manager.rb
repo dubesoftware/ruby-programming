@@ -81,7 +81,7 @@ class ProjectManager
   def save_needed_funding(to_file="needed_funding.txt")
     File.open(to_file, "w") do |file|
       file.puts "#{@title} Needing Funding:"
-      @projects.select{|project| project.total_funding_still_needed > 0}.sort.each do |project|
+      @projects.select { |project| project.total_funding_still_needed > 0 }.sort.each do |project|
         file.puts(project.funding_needed_entry)
       end
     end

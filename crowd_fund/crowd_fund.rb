@@ -5,7 +5,7 @@ project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
 project_manager.load_projects(ARGV.shift || "projects.csv")
 
 loop do
-  puts "How many funding rounds? ('quit' to exit)"
+  puts("How many funding rounds? ('quit' to exit)")
   answer = gets.chomp.downcase
   
   case answer
@@ -15,7 +15,7 @@ loop do
     project_manager.print_stats
     break
   else
-    puts "Please enter a number or 'quit'"
+    puts("Please enter a number or 'quit'")
   end
 end
 
