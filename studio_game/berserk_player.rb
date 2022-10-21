@@ -18,6 +18,10 @@ class BerserkPlayer < Player
       puts("#{@name} is berserk!") if berserk?
     end
   end
+  
+  def blam
+    berserk? ? w00t : super
+  end
 end
 
 if __FILE__ == $0
