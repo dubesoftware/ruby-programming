@@ -4,7 +4,7 @@ class Player
   attr_accessor :name
   attr_reader :health
   
-  def initialize(name, health=100)
+  def initialize(name, health = 100)
     @name = name.capitalize
     @health = health
     @found_treasures = Hash.new(0)

@@ -5,7 +5,7 @@ class Project
   attr_accessor :name
   attr_reader :initial_funding_amount, :current_funding_amount, :target_funding_amount
   
-  def initialize(name, initial_funding_amount, target_funding_amount=0)
+  def initialize(name, initial_funding_amount, target_funding_amount = 0)
     @name = name
     @current_funding_amount = @initial_funding_amount = initial_funding_amount
     @target_funding_amount = target_funding_amount
