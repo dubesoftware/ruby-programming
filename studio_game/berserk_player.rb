@@ -1,6 +1,6 @@
 require_relative 'player'
 
-class BeserkPlayer < Player
+class BerserkPlayer < Player
   
   def initialize(name, health)
     super(name, health)
