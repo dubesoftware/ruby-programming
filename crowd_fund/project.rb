@@ -5,7 +5,7 @@ class Project
   attr_accessor :name
   attr_reader :initial_funding_amount, :current_funding_amount, :target_funding_amount
   
-  def initialize(name, initial_funding_amount=0, target_funding_amount)
+  def initialize(name, initial_funding_amount, target_funding_amount=0)
     @name = name
     @current_funding_amount = @initial_funding_amount = initial_funding_amount
     @target_funding_amount = target_funding_amount
@@ -62,5 +62,15 @@ class Project
     @received_pledges.each do |name, amount|
       yield Pledge.new(name, amount)
     end
+  end
+  
+  def funding_needed_entry
+    formatted_name = @name.ljust(20, '.')
+    "#{formatted_name} #{total_funding_still_needed}"
+  end
+  
+  def self.from_csv(string)
+    name, initial_funding_amount = string.split(',')
+    Project.new(name, Integer(initial_funding_amount))
   end
 end

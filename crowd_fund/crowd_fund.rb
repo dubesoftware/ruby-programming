@@ -18,3 +18,5 @@ loop do
     puts "Please enter a number or 'quit'"
   end
 end
+
+project_manager.save_needed_funding
