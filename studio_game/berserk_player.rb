@@ -14,7 +14,7 @@ class BerserkPlayer < Player
   def w00t
     super
     @w00t_count += 1
-    if beserk?
+    if berserk?
       puts("Berserker is berserk!")
     end
   end
