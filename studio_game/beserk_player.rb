@@ -8,6 +8,6 @@ class BeserkPlayer < Player
   end
   
   def berserk?
-    @woot_count > 5 ? true : false
+    @woot_count > 5
   end
 end
