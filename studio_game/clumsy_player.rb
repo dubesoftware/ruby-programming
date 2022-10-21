@@ -1,6 +1,11 @@
 require_relative 'player'
 
 class ClumsyPlayer < Player
+  
+  def found_treasure(treasure)
+    @found_treasures[treasure.name] += treasure.points
+    puts("#{@name} found a #{treasure.name} worth #{treasure.points} points.")
+  end
 end
 
 if __FILE__ == $0
