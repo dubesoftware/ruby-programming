@@ -15,7 +15,7 @@ class BerserkPlayer < Player
     super
     @w00t_count += 1
     if berserk?
-      puts("Berserker is berserk!")
+      puts("#{@name} is berserk!") if berserk?
     end
   end
 end
