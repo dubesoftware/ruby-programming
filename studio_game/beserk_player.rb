@@ -6,4 +6,8 @@ class BeserkPlayer < Player
     super(name, health)
     @woot_count = 0
   end
+  
+  def berserk?
+    @woot_count > 5 ? true : false
+  end
 end
