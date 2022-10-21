@@ -82,11 +82,18 @@ describe Project do
       Pledge.new(:silver, 65),
       Pledge.new(:gold, 720)
     ]
+  end  
+  
+  it "can be created from a CSV string" do
+    project = Project.from_csv("Project1,150")
+
+    project.name.should == "Project1"
+    project.initial_funding_amount.should == 150
   end
   
   context "created with a default value of 0 for funding amount" do
     before do
-      @project = Project.new(@name, @target_funding_amount)
+      @project = Project.new(@name, @initial_funding_amount=0)
     end
     
     it "has a default value of 0 for funding amount" do
