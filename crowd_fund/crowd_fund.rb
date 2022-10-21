@@ -10,5 +10,17 @@ project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
 projects.each do |project|
   project_manager.add_project(project)
 end
-project_manager.request_funding(3)
-project_manager.print_stats
+
+loop do
+  puts "How many funding rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+  
+  case answer
+  when /^\d+$/
+    project_manager.request_funding(Integer(answer))
+  when 'quit', 'exit'
+    project_manager.print_stats
+    break
+  else
+  end
+end
