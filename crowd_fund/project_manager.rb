@@ -1,3 +1,4 @@
+require 'csv'
 require_relative 'funding_round'
 require_relative 'pledge_pool'
 
@@ -11,6 +12,13 @@ class ProjectManager
   
   def add_project(project)
     @projects << project
+  end
+  
+  def load_projects(from_file)
+    CSV.foreach(from_file) do |row|
+      project = Project.new(row[0], row[1].to_i)
+      add_project(project)
+    end
   end
   
   def print_pledge_amounts
