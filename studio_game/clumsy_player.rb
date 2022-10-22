@@ -18,8 +18,6 @@ class ClumsyPlayer < Player
   end
 end
 
-clumsy = ClumsyPlayer.new("klutz", 105, 3)
-
 if __FILE__ == $0
   clumsy = ClumsyPlayer.new("klutz")
 
