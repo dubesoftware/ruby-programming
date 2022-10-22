@@ -6,7 +6,7 @@ class GrantProject < Project
     "Grant projects do not allow removal of funds."
   end
   
-  def remove_from_funds
-    "Grant projects do not allow removal of funds."
+  def remove_from_funds(amount)
+    "Grant projects do not allow deduction from funds."
   end
 end
