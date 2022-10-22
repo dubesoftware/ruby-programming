@@ -11,4 +11,5 @@ class MatchedFundsProject < Project
     if @current_funding_amount >= (target_funding_amount * 0.5)
       add_to_funds(target_funding_amount * 0.5)
     end
+  end
 end
