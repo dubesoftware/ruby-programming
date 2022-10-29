@@ -1,4 +1,5 @@
 require_relative 'treasure_trove'
+require_relative 'playable'
 
 class Player
   include Playable
