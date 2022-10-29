@@ -1,0 +1,2 @@
+module Fundable
+end
