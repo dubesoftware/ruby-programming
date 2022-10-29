@@ -1,6 +1,8 @@
 require_relative 'treasure_trove'
 
 class Player
+  include Playable
+  
   attr_accessor :name
   attr_reader :health
   
@@ -20,10 +22,6 @@ class Player
   
   def score
     @health + points
-  end
-  
-  def strong?
-    @health > 100
   end
   
   def name= (new_name)
