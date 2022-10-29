@@ -12,5 +12,6 @@ class Die
   def roll
     @number = rand(1..6)
     audit
+    @number
   end
 end
