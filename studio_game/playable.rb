@@ -2,12 +2,12 @@ module Playable
   
   def w00t
     @health += 15
-    puts "#{@name} got w00ted!"
+    puts "#{self.name} got w00ted!"
   end
   
   def blam
     @health -= 10
-    puts "#{@name} got blammed!"
+    puts "#{self.name} got blammed!"
   end
   
   def strong?
