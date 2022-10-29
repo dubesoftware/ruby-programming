@@ -14,16 +14,6 @@ class Player
     "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
   end
   
-  def blam
-    @health -= 10
-    puts "#{name} got blammed!"
-  end
-  
-  def w00t
-    @health += 15
-    puts "#{name} got w00ted!"
-  end
-  
   def points
     @found_treasures.values.reduce(0, :+)
   end
