@@ -1,9 +1,12 @@
 require_relative 'die'
 require_relative 'pledge_pool'
+require_relative 'fundable'
 
 class Project
-  attr_accessor :name
-  attr_reader :initial_funding_amount, :current_funding_amount, :target_funding_amount
+  include Fundable
+  
+  attr_accessor :name, :current_funding_amount
+  attr_reader :initial_funding_amount, :target_funding_amount
   
   def initialize(name, initial_funding_amount, target_funding_amount = 0)
     @name = name
@@ -16,32 +19,8 @@ class Project
     "Project #{@name} has $#{total_funding_received} towards a goal of $#{@target_funding_amount}."
   end
   
-  def add_funds
-    @current_funding_amount += 25
-    puts "\nProject #{@name} got $25 more!"
-  end
-  
-  def remove_funds
-    @current_funding_amount -= 15
-    puts "\nProject #{@name} lost $15!"
-  end
-  
-  def add_to_funds(amount)
-    @current_funding_amount += amount
-    puts "\nProject #{@name} got #{amount} funds!"
-  end
-  
-  def remove_from_funds(amount)
-    @current_funding_amount -= amount
-    puts "\nProject #{@name} lost #{amount} funds!"
-  end
-  
   def total_funding_still_needed
     @target_funding_amount - total_funding_received
-  end
-  
-  def fully_funded?
-    total_funding_received >= @target_funding_amount
   end
   
   def received_pledge(pledge)
