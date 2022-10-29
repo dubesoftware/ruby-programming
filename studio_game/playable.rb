@@ -1,16 +1,16 @@
 module Playable
   
   def w00t
-    @health += 15
+    self.health += 15
     puts "#{name} got w00ted!"
   end
   
   def blam
-    @health -= 10
+    self.health -= 10
     puts "#{name} got blammed!"
   end
   
   def strong?
-    @health > 100
+    health > 100
   end
 end
