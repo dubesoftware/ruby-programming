@@ -4,8 +4,7 @@ require_relative 'playable'
 class Player
   include Playable
   
-  attr_accessor :name
-  attr_accessor :health
+  attr_accessor :name, :health
   
   def initialize(name, health = 100)
     @name = name.capitalize
