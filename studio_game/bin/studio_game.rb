@@ -1,7 +1,7 @@
-require_relative 'player'
-require_relative 'clumsy_player'
-require_relative 'berserk_player'
-require_relative 'game'
+require_relative '../lib/studio_game/player'
+require_relative '../lib/studio_game/clumsy_player'
+require_relative '../lib/studio_game/berserk_player'
+require_relative '../lib/studio_game/game'
 
 knuckleheads = StudioGame::Game.new("Knuckleheads")
 knuckleheads.load_players(ARGV.shift || "players.csv")
