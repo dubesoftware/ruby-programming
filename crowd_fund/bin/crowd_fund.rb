@@ -1,5 +1,5 @@
-require_relative 'project'
-require_relative 'project_manager'
+require_relative '../lib/project'
+require_relative '../lib/project_manager'
 
 project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
 project_manager.load_projects(ARGV.shift || "projects.csv")
