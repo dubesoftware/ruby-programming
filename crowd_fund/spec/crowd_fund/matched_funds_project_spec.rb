@@ -1,5 +1,5 @@
-require_relative 'spec_helper'
-require_relative 'matched_funds_project'
+require 'crowd_fund/spec_helper'
+require 'crowd_fund/matched_funds_project'
 
 module CrowdFund
   describe MatchedFundsProject do

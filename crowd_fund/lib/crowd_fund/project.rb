@@ -1,6 +1,6 @@
-require_relative 'die'
-require_relative 'pledge_pool'
-require_relative 'fundable'
+require 'crowd_fund/die'
+require 'crowd_fund/pledge_pool'
+require 'crowd_fund/fundable'
 
 module CrowdFund
   class Project

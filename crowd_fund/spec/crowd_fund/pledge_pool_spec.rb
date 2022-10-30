@@ -1,5 +1,5 @@
-require_relative 'spec_helper'
-require_relative 'pledge_pool'
+require 'crowd_fund/spec_helper'
+require 'crowd_fund/pledge_pool'
 
 module CrowdFund
   describe Pledge do
