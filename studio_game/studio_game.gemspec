@@ -1,6 +1,6 @@
 
 Gem::Specification.new do |s|
-  s.name         = "studio_game"
+  s.name         = "studio_game_dubesoftware"
   s.version      = "1.0.0"
   s.author       = "@dubesoftware"
   s.email        = "zebra05+studiogame@gmail.com"
