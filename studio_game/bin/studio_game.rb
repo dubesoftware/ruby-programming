@@ -4,7 +4,8 @@ require_relative '../lib/studio_game/berserk_player'
 require_relative '../lib/studio_game/game'
 
 knuckleheads = StudioGame::Game.new("Knuckleheads")
-knuckleheads.load_players(ARGV.shift || "players.csv")
+default_player_file = File.join(File.dirname(__FILE__), 'players.csv')
+knuckleheads.load_players(ARGV.shift || default_player_file)
 
 clumsy_player = StudioGame::ClumsyPlayer.new("klutz", 105)
 knuckleheads.add_player(clumsy_player)
