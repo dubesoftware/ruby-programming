@@ -1,6 +1,6 @@
 require 'csv'
-require 'crowd_fund/funding_round'
-require 'crowd_fund/pledge_pool'
+require_relative 'funding_round'
+require_relative 'pledge_pool'
 
 module CrowdFund
   class ProjectManager

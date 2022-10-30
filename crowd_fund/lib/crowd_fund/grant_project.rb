@@ -1,4 +1,4 @@
-require 'crowd_fund/project'
+require_relative 'project'
 
 module CrowdFund
   class GrantProject < Project
