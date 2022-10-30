@@ -2,7 +2,8 @@ require_relative '../lib/project'
 require_relative '../lib/project_manager'
 
 project_manager = ProjectManager.new("VC-Friendly Start-up Projects")
-project_manager.load_projects(ARGV.shift || "projects.csv")
+default_project_file = File.join(File.dirname(__FILE__), 'projects.csv')
+project_manager.load_projects(ARGV.shift || default_project_file)
 
 loop do
   puts("How many funding rounds? ('quit' to exit)")
