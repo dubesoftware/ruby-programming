@@ -1,3 +1,3 @@
 cards = %w(Jack Queen King Ace Joker)
 
-cards.each { |c| puts c.upcase }
+cards.each { |c| puts "#{c.upcase} - #{c.length}" }
