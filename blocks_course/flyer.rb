@@ -1,3 +1,7 @@
+require_relative 'utilities'
+
+separator = Utilities::separator
+
 class Flyer
   attr_reader :name, :email, :miles_flown
 
