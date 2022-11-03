@@ -30,3 +30,11 @@ puts flyers
 puts separator
 
 flyers.each { |f| puts "#{f.name} - #{f.miles_flown} miles" }
+puts separator
+
+total = 0
+flyers.each do |f|
+  total += f.miles_flown
+end
+puts "Total miles flown: #{total}"
+puts separator
