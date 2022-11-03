@@ -1,6 +1,4 @@
-def separator
-  puts "".ljust(20, '-')
-end
+require_relative 'utilities'
 
 cards = %w(Jack Queen King Ace Joker)
 scores = {"Larry" => 10, "Moe" => 8, "Curly" => 12}
