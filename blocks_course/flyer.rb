@@ -28,3 +28,5 @@ end
 
 puts flyers
 puts separator
+
+flyers.each { |f| puts "#{f.name} - #{f.miles_flown} miles" }
