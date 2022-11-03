@@ -10,3 +10,4 @@ separator
 cards.reverse_each { |card| puts "#{card.upcase} - #{card.length}" }
 separator
 scores.each { |k, v| puts "#{k} scored a #{v}!" }
+separator
