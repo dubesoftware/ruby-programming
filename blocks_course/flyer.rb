@@ -27,3 +27,4 @@ flyers = []
 end
 
 puts flyers
+puts separator
