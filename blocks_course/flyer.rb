@@ -38,3 +38,7 @@ flyers.each do |f|
 end
 puts "Total miles flown: #{total}"
 puts separator
+
+promotions = { "United" => 1.5, "Delta" => 2.0, "Lufthansa" => 2.5 }
+promotions.each { |k, v| puts "Earn #{v}x miles by flying #{k}!" }
+puts separator
