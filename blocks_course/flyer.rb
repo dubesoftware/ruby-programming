@@ -19,7 +19,7 @@ end
 flyers = []
 
 1.upto(5) do |n|
-  name        = "#Flyer #{n}"
+  name        = "Flyer #{n}"
   email       = "flyer#{n}@example.com"
   miles_flown = n * 1000
   
