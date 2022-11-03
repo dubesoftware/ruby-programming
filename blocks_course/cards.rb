@@ -1,13 +1,13 @@
-require_relative 'utilities'
-
-separator = Utilities::separator
+def separator
+  puts "".ljust(20, '-')
+end
 
 cards = %w(Jack Queen King Ace Joker)
 scores = {"Larry" => 10, "Moe" => 8, "Curly" => 12}
 
 cards.shuffle.  each { |c| puts "#{c.upcase} - #{c.length}" }
-puts separator
+separator
 cards.reverse_each { |card| puts "#{card.upcase} - #{card.length}" }
-puts separator
+separator
 scores.each { |k, v| puts "#{k} scored a #{v}!" }
-puts separator
+separator
