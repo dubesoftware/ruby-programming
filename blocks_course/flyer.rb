@@ -46,3 +46,10 @@ puts separator
 desserts = { "chocolate" => 1.00, "vanilla" => 0.75, "cinnamon" => 1.25 }
 desserts.each { |k, v| puts "$#{v * 2} for a cup of #{k}." }
 puts separator
+
+flyers.each do |f|
+  promotions.each do |k, v|
+    puts "#{f.name} could earn #{f.miles_flown * v} miles by flying #{k}!"
+  end
+end
+puts separator
