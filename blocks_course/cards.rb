@@ -1,5 +1,6 @@
 require_relative 'utilities'
 
+separator = Utilities::separator
 cards = %w(Jack Queen King Ace Joker)
 scores = {"Larry" => 10, "Moe" => 8, "Curly" => 12}
 
