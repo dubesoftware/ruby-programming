@@ -1,6 +1,6 @@
 module Utilities
   
-  def separator
-    puts "".ljust(20, '-')
+  def self.separator
+    "".ljust(20, '-')
   end
 end
