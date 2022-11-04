@@ -27,6 +27,8 @@ scores.reject! { |s| s.even? }
 p scores
 puts separator
 
+scores = [83, 71, 92, 64, 98, 87, 75, 69]
+
 scores_doubled = scores.map { |s| s * 2 }
 p scores_doubled
 puts separator
