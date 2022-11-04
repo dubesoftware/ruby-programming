@@ -22,3 +22,5 @@ puts separator
 scores.select! { |s| s > 70 }
 p scores
 puts separator
+
+scores.reject! { |s| s.even? }
