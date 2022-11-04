@@ -14,3 +14,7 @@ puts separator
 any_failing_scores = scores.any? { |s| s < 70 }
 p any_failing_scores
 puts separator
+
+first_failing_score = scores.detect { |s| s < 70 }
+p first_failing_score
+puts separator
