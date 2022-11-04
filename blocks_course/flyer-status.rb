@@ -12,3 +12,7 @@ flyers << Flyer.new("Shemp", "shemp@example.com", 2000)
 frequent_flyer_customers = flyers.select { |f| f.miles_flown >= 3000 }
 puts frequent_flyer_customers
 puts separator
+
+less_frequent_flyer_customers = flyers.reject { |f| f.miles_flown >= 3000 }
+puts less_frequent_flyer_customers
+puts separator
