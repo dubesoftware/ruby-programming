@@ -24,3 +24,5 @@ p scores
 puts separator
 
 scores.reject! { |s| s.even? }
+p scores
+puts separator
