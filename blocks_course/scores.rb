@@ -10,3 +10,7 @@ puts separator
 low_scores = scores.reject { |s| s > 80 }
 p low_scores
 puts separator
+
+any_failing_scores = scores.any? { |s| s < 70 }
+p any_failing_scores
+puts separator
