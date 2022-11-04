@@ -34,3 +34,10 @@ puts separator
 total = scores.reduce(0, :+)
 puts "Total score: #{total}"
 puts separator
+
+evens, odds = scores.partition { |s| s.even? }
+puts "Evens:"
+p evens
+puts "Odds:"
+p odds
+puts separator
