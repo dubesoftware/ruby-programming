@@ -18,3 +18,5 @@ puts separator
 first_failing_score = scores.detect { |s| s < 70 }
 p first_failing_score
 puts separator
+
+scores.select! { |s| s > 70 }
