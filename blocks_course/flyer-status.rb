@@ -20,3 +20,7 @@ puts separator
 any_platinum_flyers = flyers.any? { |f| f.status == :platinum }
 p any_platinum_flyers
 puts separator
+
+first_bronze_status_flyer = flyers.detect { |f| f.status == :bronze }
+puts first_bronze_status_flyer
+puts separator
