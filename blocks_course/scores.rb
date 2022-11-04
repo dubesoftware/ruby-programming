@@ -30,3 +30,7 @@ puts separator
 scores_doubled = scores.map { |s| s * 2 }
 p scores_doubled
 puts separator
+
+total_scores = scores.reduce(0, :+)
+puts "Total score: #{total_scores}"
+puts separator
