@@ -18,5 +18,5 @@ puts less_frequent_flyer_customers
 puts separator
 
 any_platinum_flyers = flyers.any? { |f| f.status == :platinum }
-puts any_platinum_flyers
+p any_platinum_flyers
 puts separator
