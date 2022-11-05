@@ -35,3 +35,7 @@ puts separator
 name_tags = flyers.map { |f| "#{f.name} (#{f.status.upcase})" }
 p name_tags
 puts separator
+
+distances_flown_in_km = flyers.map { |f| f.miles_flown * 1.6 }
+p distances_flown_in_km
+puts separator
