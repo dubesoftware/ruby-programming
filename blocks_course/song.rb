@@ -108,8 +108,7 @@ puts separator
 
 puts "Display the tag line of each song in a playlist:"
 puts separator
-puts playlist.each_tagline { |t| puts t }
-# What is going on here? Why are objects being printed out just before the final separator?
+playlist.each_tagline { |t| puts t }
 puts separator
 
 # puts "Play songs in the playlist that were sung by a particular artist:"
