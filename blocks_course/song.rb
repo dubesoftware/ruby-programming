@@ -10,9 +10,9 @@ class Song
   end
   
   def each_filename
-    file_extensions = %w(mp3 wav aac)
-    title = @name.downcase.gsub(' ', '-')
-    file_extensions.map { |e| "#{title}-#{@artist.downcase}." }.each { |file_name| yield file_name }
+    basename = "#{name}-#{artist}".gsub(" ", "-").downcase
+    extensions = %w(.mp3 .wav .aac)
+    extensions.each { |e| yield basename + e }
   end
 
   def play
@@ -116,3 +116,5 @@ playlist.each_by_artist("Hank") { |s| s.play }
 puts "....or..."
 playlist.each_by_artist("Waylon") { |s| s.play }
 puts separator
+
+puts ""
