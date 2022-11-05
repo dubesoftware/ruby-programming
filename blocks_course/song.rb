@@ -54,3 +54,6 @@ puts "Play songs using play_songs method:"
 puts separator
 playlist.play_songs
 puts separator
+
+okie_songs = playlist.select { |song| song.name =~ /Okie/ }
+p okie_songs
