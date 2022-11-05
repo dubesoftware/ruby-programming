@@ -1,4 +1,5 @@
 require_relative 'utilities'
+require_relative 'my_enumerable'
 
 class Song
   attr_reader :name, :artist, :duration
