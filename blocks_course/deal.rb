@@ -6,4 +6,7 @@ def deal
   yield random_face, random_suit
 end
 
-deal { |face, suit| puts "Dealt a #{face} of #{suit}"}
+deal do |face, suit|
+  puts "Dealt a #{face} of #{suit}"
+  face.length + suit.length
+end
