@@ -1,7 +1,7 @@
 def three_times
-  yield(1)
-  yield(2)
-  yield(3)
+  1.upto(3) do |n|
+    yield(n)
+  end
 end
 
 three_times do |n|
