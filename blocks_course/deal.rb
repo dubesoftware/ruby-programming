@@ -3,7 +3,8 @@ def deal
   suits = ["Hearts", "Diamonds", "Spades", "Clubs"]
   random_face = faces.sample
   random_suit = suits.sample
-  yield random_face, random_suit
+  score = yield random_face, random_suit
+  puts "You scored a #{score}"
 end
 
 deal do |face, suit|
