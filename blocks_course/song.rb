@@ -88,11 +88,11 @@ non_okie_songs = playlist.my_reject { |song| song.name =~ /Okie/ }
 p non_okie_songs
 puts separator
 
-# puts "Songs where artist is Hank:"
-# puts separator
+puts "Songs where artist is Hank:"
+puts separator
 # p playlist.any? { |song| song.artist == "Hank" }
-# p playlist.detect { |song| song.artist == "Hank" }
-# puts separator
+p playlist.my_detect { |song| song.artist == "Hank" }
+puts separator
 
 puts "Properly-formatted song labels:"
 puts separator
