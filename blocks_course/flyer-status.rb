@@ -37,5 +37,13 @@ p name_tags
 puts separator
 
 distances_flown_in_km = flyers.map { |f| f.miles_flown * 1.6 }
-p distances_flown_in_km
+puts "Distances flown in km: #{distances_flown_in_km}"
+puts separator
+
+total_miles_flown = flyers.reduce(0) { |total, f| total + f.miles_flown }
+puts "Total miles flown: #{total_miles_flown}"
+puts separator
+
+total_kilometres_flown = flyers.map { |f| f.miles_flown * 1.6 }.reduce(0, :+)
+puts "Total kilometres flown: #{total_kilometres_flown}"
 puts separator
