@@ -22,4 +22,11 @@ module MyEnumerable
     end
     new_array
   end
+  
+  def my_detect
+    each do |value|
+      return value if yield(value)
+    end
+    nil
+  end
 end
