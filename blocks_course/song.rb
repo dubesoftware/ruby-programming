@@ -11,3 +11,7 @@ class Song
     puts "Playing '#{name}' by #{artist} (#{duration} mins)..."
   end
 end
+
+song1 = Song.new("Okie From Muskogee", "Merle", 5)
+song2 = Song.new("Ramblin' Man", "Hank", 7)
+song3 = Song.new("Good Hearted Woman", "Waylon", 6)
