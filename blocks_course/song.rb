@@ -100,11 +100,11 @@ song_labels = playlist.my_map { |song| "#{song.name} - #{song.artist}" }
 p song_labels
 puts separator
 
-# puts "Total duration of playlist in minutes:"
-# puts separator
-# total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
-# puts "#{total_duration} minutes"
-# puts separator
+puts "Total duration of playlist in minutes:"
+puts separator
+total_duration = playlist.my_reduce(0) { |sum, song| sum + song.duration }
+puts "#{total_duration} minutes"
+puts separator
 
 puts "Display the tag line of each song in a playlist:"
 puts separator
