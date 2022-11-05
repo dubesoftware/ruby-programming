@@ -77,3 +77,15 @@ puts separator
 p playlist.any? { |song| song.artist == "Hank" }
 p playlist.detect { |song| song.artist == "Hank" }
 puts separator
+
+puts "Properly-formatted song labels:"
+puts separator
+song_labels = playlist.map { |song| "#{song.name} - #{song.artist}" }
+p song_labels
+puts separator
+
+puts "Total duration of playlist in minutes:"
+puts separator
+total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
+puts "#{total_duration} minutes"
+puts separator
