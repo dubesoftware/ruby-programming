@@ -90,7 +90,7 @@ puts separator
 
 puts "Songs where artist is Hank:"
 puts separator
-# p playlist.any? { |song| song.artist == "Hank" }
+p playlist.my_any? { |song| song.artist == "Hank" }
 p playlist.my_detect { |song| song.artist == "Hank" }
 puts separator
 
