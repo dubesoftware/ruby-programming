@@ -117,4 +117,7 @@ puts "....or..."
 playlist.each_by_artist("Waylon") { |s| s.play }
 puts separator
 
-puts ""
+puts "Print each song's file names:"
+puts separator
+playlist.each { |s| s.each_filename { |fn| puts fn } }
+puts separator
