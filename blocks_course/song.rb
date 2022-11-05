@@ -26,3 +26,8 @@ class Playlist
     @songs << song
   end
 end
+
+playlist = Playlist.new("Country/Western, Y'all!")
+playlist.add_song(song1)
+playlist.add_song(song2)
+playlist.add_song(song3)
