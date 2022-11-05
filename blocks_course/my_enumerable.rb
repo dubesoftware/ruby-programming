@@ -36,4 +36,12 @@ module MyEnumerable
     end
     false
   end
+  
+  def my_reduce(initial_value = 0)
+    sum = initial_value
+    each do |value|
+      sum = yield(sum, value)
+    end
+    sum
+  end
 end
