@@ -12,7 +12,7 @@ class Song
   def each_filename
     file_extensions = %w(mp3 wav aac)
     title = @name.downcase.gsub(' ', '-')
-    file_extensions.map { |e| "#{title}-#{@artist.downcase}." }
+    file_extensions.map { |e| "#{title}-#{@artist.downcase}." }.each { |file_name| yield file_name }
   end
 
   def play
