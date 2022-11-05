@@ -36,6 +36,10 @@ class Playlist
   def each_tagline
     @songs.each { |s| yield "#{s.name} - #{s.artist}" }
   end
+  
+  def each_by_artist(artist)
+    @songs.select { |s| s.artist == artist }.each { |s| yield s }
+  end
 
   def add_song(song)
     @songs << song
@@ -79,7 +83,7 @@ puts separator
 puts "Songs where artist is Hank:"
 puts separator
 p playlist.any? { |song| song.artist == "Hank" }
-p playlist.detect { |song| song.artist == "Hank" }"
+p playlist.detect { |song| song.artist == "Hank" }
 puts separator
 
 puts "Properly-formatted song labels:"
@@ -98,4 +102,11 @@ puts "Display the tag line of each song in a playlist:"
 puts separator
 puts playlist.each_tagline { |t| puts t }
 # What is going on here? Why are objects being printed out just before the final separator?
+puts separator
+
+puts "Play songs in the playlist that were sung by a particular artist:"
+puts separator
+playlist.each_by_artist("Hank") { |s| s.play }
+puts "....or..."
+playlist.each_by_artist("Waylon") { |s| s.play }
 puts separator
