@@ -21,6 +21,10 @@ class Playlist
     @name = name
     @songs = []
   end
+  
+  def each
+    @songs.each { |s| yield s }
+  end
 
   def add_song(song)
     @songs << song
@@ -31,3 +35,4 @@ playlist = Playlist.new("Country/Western, Y'all!")
 playlist.add_song(song1)
 playlist.add_song(song2)
 playlist.add_song(song3)
+playlist.each { |s| s.play }
