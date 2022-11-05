@@ -24,3 +24,10 @@ puts separator
 first_bronze_status_flyer = flyers.detect { |f| f.status == :bronze }
 puts first_bronze_status_flyer
 puts separator
+
+platinum_flyers, other_flyers = flyers.partition { |f| f.status == :platinum }
+puts "Platinum flyers:"
+puts platinum_flyers
+puts "Other flyers:"
+puts other_flyers
+puts separator
