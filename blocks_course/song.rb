@@ -1,3 +1,5 @@
+require_relative 'utilities'
+
 class Song
   attr_reader :name, :artist, :duration
 
@@ -35,9 +37,20 @@ class Playlist
   end
 end
 
+separator = Utilities::separator
+
 playlist = Playlist.new("Country/Western, Y'all!")
 playlist.add_song(song1)
 playlist.add_song(song2)
 playlist.add_song(song3)
+
+puts separator
+puts "Play songs using each method:"
+puts separator
 playlist.each { |s| s.play }
+puts separator
+
+puts "Play songs using play_songs method:"
+puts separator
 playlist.play_songs
+puts separator
