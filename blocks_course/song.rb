@@ -46,7 +46,7 @@ class Playlist
   end
   
   def each_by_artist(artist)
-    @songs.select { |s| s.artist == artist }.each { |s| yield s }
+    @songs.my_select { |s| s.artist == artist }.each { |s| yield s }
   end
 
   def add_song(song)
@@ -78,7 +78,7 @@ puts separator
 
 puts "Songs where name contains Okie:"
 puts separator
-okie_songs = playlist.select { |song| song.name =~ /Okie/ }
+okie_songs = playlist.my_select { |song| song.name =~ /Okie/ }
 p okie_songs
 puts separator
 
@@ -96,7 +96,7 @@ puts separator
 
 puts "Properly-formatted song labels:"
 puts separator
-song_labels = playlist.map { |song| "#{song.name} - #{song.artist}" }
+song_labels = playlist.my_map { |song| "#{song.name} - #{song.artist}" }
 p song_labels
 puts separator
 
