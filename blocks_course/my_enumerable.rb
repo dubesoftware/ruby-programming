@@ -18,7 +18,7 @@ module MyEnumerable
   def my_reject
     new_array = []
     each do |value|
-      new_array << value if !(yield(value))
+      new_array << value unless yield(value)
     end
     new_array
   end
