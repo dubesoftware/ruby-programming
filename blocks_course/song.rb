@@ -82,11 +82,11 @@ okie_songs = playlist.my_select { |song| song.name =~ /Okie/ }
 p okie_songs
 puts separator
 
-# puts "Songs where name does not contain Okie:"
-# puts separator
-# non_okie_songs = playlist.reject { |song| song.name =~ /Okie/ }
-# p non_okie_songs
-# puts separator
+puts "Songs where name does not contain Okie:"
+puts separator
+non_okie_songs = playlist.my_reject { |song| song.name =~ /Okie/ }
+p non_okie_songs
+puts separator
 
 # puts "Songs where artist is Hank:"
 # puts separator
