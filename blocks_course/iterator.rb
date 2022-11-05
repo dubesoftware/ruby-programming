@@ -1,5 +1,7 @@
 def three_times
-  3.times { yield }
+  yield
+  yield
+  yield
 end
 
 three_times { puts "Ho!" }
