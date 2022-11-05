@@ -112,12 +112,12 @@ puts playlist.each_tagline { |t| puts t }
 # What is going on here? Why are objects being printed out just before the final separator?
 puts separator
 
-puts "Play songs in the playlist that were sung by a particular artist:"
-puts separator
-playlist.each_by_artist("Hank") { |s| s.play }
-puts "....or..."
-playlist.each_by_artist("Waylon") { |s| s.play }
-puts separator
+# puts "Play songs in the playlist that were sung by a particular artist:"
+# puts separator
+# playlist.each_by_artist("Hank") { |s| s.play }
+# puts "....or..."
+# playlist.each_by_artist("Waylon") { |s| s.play }
+# puts separator
 
 puts "Print each song's file names:"
 puts separator
