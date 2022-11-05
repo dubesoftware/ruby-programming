@@ -82,17 +82,17 @@ okie_songs = playlist.my_select { |song| song.name =~ /Okie/ }
 p okie_songs
 puts separator
 
-puts "Songs where name does not contain Okie:"
-puts separator
-non_okie_songs = playlist.reject { |song| song.name =~ /Okie/ }
-p non_okie_songs
-puts separator
+# puts "Songs where name does not contain Okie:"
+# puts separator
+# non_okie_songs = playlist.reject { |song| song.name =~ /Okie/ }
+# p non_okie_songs
+# puts separator
 
-puts "Songs where artist is Hank:"
-puts separator
-p playlist.any? { |song| song.artist == "Hank" }
-p playlist.detect { |song| song.artist == "Hank" }
-puts separator
+# puts "Songs where artist is Hank:"
+# puts separator
+# p playlist.any? { |song| song.artist == "Hank" }
+# p playlist.detect { |song| song.artist == "Hank" }
+# puts separator
 
 puts "Properly-formatted song labels:"
 puts separator
@@ -100,11 +100,11 @@ song_labels = playlist.my_map { |song| "#{song.name} - #{song.artist}" }
 p song_labels
 puts separator
 
-puts "Total duration of playlist in minutes:"
-puts separator
-total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
-puts "#{total_duration} minutes"
-puts separator
+# puts "Total duration of playlist in minutes:"
+# puts separator
+# total_duration = playlist.reduce(0) { |sum, song| sum + song.duration }
+# puts "#{total_duration} minutes"
+# puts separator
 
 puts "Display the tag line of each song in a playlist:"
 puts separator
