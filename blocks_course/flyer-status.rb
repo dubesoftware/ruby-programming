@@ -31,3 +31,7 @@ puts platinum_flyers
 puts "Other flyers:"
 puts other_flyers
 puts separator
+
+name_tags = flyers.map { |f| "#{f.name} (#{f.status.upcase})" }
+p name_tags
+puts separator
