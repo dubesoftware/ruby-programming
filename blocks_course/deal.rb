@@ -19,3 +19,9 @@ deal(10) do |face, suit|
 end
 
 deal(0)
+
+def progress
+  0.step(100, 10) do |n|
+    yield(n)
+  end
+end
