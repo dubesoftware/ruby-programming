@@ -60,8 +60,14 @@ puts separator
 playlist.play_songs
 puts separator
 
-puts "Songs where name contains Okie"
+puts "Songs where name contains Okie:"
 puts separator
 okie_songs = playlist.select { |song| song.name =~ /Okie/ }
 p okie_songs
+puts separator
+
+puts "Songs where artist is Hank:"
+puts separator
+hank_songs = playlist.select { |s| s.artist =~ /Hank/ }
+p hank_songs
 puts separator
