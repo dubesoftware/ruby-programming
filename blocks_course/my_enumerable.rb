@@ -29,4 +29,11 @@ module MyEnumerable
     end
     nil
   end
+  
+  def my_any?
+    each do |value|
+      return true if yield(value)
+    end
+    false
+  end
 end
