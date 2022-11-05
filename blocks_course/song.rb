@@ -8,6 +8,12 @@ class Song
     @artist = artist
     @duration = duration
   end
+  
+  def each_filename
+    file_extensions = %w(mp3 wav aac)
+    title = @name.downcase.gsub(' ', '-')
+    file_extensions.map { |e| "#{title}-#{@artist.downcase}." }
+  end
 
   def play
     puts "Playing '#{name}' by #{artist} (#{duration} mins)..."
