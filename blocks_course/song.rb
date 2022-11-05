@@ -74,6 +74,6 @@ puts separator
 
 puts "Songs where artist is Hank:"
 puts separator
-hank_songs = playlist.select { |s| s.artist =~ /Hank/ }
-p hank_songs
+p playlist.any? { |song| song.artist == "Hank" }
+p playlist.detect { |song| song.artist == "Hank" }
 puts separator
