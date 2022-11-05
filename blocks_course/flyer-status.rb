@@ -47,3 +47,7 @@ puts separator
 total_kilometres_flown = flyers.map { |f| f.miles_flown * 1.6 }.reduce(0, :+)
 puts "Total kilometres flown: #{total_kilometres_flown}"
 puts separator
+
+total_bronze_km = flyers.select { |f| f.status == :bronze }.map { |f| f.miles_flown * 1.6 }.reduce(0, :+)
+puts "Total distance flown by bronze flyers in kilometres: #{total_bronze_km}"
+puts separator
