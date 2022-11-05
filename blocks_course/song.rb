@@ -27,7 +27,10 @@ class Playlist
   end
   
   def each
-    @songs.each { |s| yield s }
+    @songs.each do |s|
+      puts "Yielding #{s.name}..."
+      yield s
+    end
   end
 
   def add_song(song)
