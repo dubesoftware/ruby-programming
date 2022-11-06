@@ -15,3 +15,7 @@ end
 puts "Generate h1 tag:"
 puts h1 { "Breaking news!" }
 puts separator
+
+puts "Generate h2 tag:"
+puts h1 { "Massive Ruby Discovered" }
+puts separator
