@@ -19,6 +19,13 @@ def with_expectation(expected_value)
   end
 end
 
+def time_it(description)
+  start_time = Time.now
+  yield
+  elapsed_time = Time.now - start_time
+  puts "#{description} took #{elapsed_time}"
+end
+
 with_debugging do
   magic_number = (23 - Time.now.hour) * Math::PI
 end
