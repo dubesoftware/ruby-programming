@@ -10,10 +10,12 @@ end
 
 def with_expectation(expected_value)
   puts "Running test..."
-  if yield == expected_value
-    puts "The block passed"
+  result = yield
+  if result == expected_value
+    puts "Passed."
   else
-    puts "The block failed"
+    puts "Failed!"
+    puts "Expected #{expected_value}, but got #{result}."
   end
 end
 
