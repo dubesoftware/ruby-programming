@@ -13,7 +13,7 @@ def h2
 end
 
 puts "Generate h1 tag:"
-puts h1 { "Breaking news!" }
+puts h1 { "Breaking News!" }
 puts separator
 
 puts "Generate h2 tag:"
