@@ -5,9 +5,16 @@ def with_debugging
 end
 
 def with_expectation(expected_value)
-  yield == expected_value ? puts "The block passed" : puts "The block failed"
+  puts "Running test..."
+  if yield == expected_value
+    puts "The block passed"
+  else
+    puts "The block failed"
+  end
 end
 
 with_debugging do
   magic_number = (23 - Time.now.hour) * Math::PI
 end
+
+with_expectation(4) { 2 + 2 }
