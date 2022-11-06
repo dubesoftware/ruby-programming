@@ -1,3 +1,7 @@
+require_relative 'utilities'
+
+separator = Utilities::separator
+
 def with_debugging
   puts "Got Here!"
   result = yield
@@ -16,5 +20,7 @@ end
 with_debugging do
   magic_number = (23 - Time.now.hour) * Math::PI
 end
+puts separator
 
 with_expectation(4) { 2 + 2 }
+puts separator
