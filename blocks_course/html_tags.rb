@@ -2,11 +2,6 @@ require_relative 'utilities'
 
 separator = Utilities::separator
 
-def generate_tag(tag)
-  content = yield
-  "<#{tag}>#{content}</#{tag}>"
-end
-
 def h1
   content = yield
   "<h1>#{content}</h1>"
@@ -17,10 +12,15 @@ def h2
   "<h2>#{content}</h2>"
 end
 
+def generate_tag(tag)
+  content = yield
+  "<#{tag}>#{content}</#{tag}>"
+end
+
 puts "Generate h1 tag:"
-puts h1 { "Breaking News!" }
+puts generate_tag("h1") { "Breaking News!" }
 puts separator
 
 puts "Generate h2 tag:"
-puts h1 { "Massive Ruby Discovered" }
+puts generate_tag("h2") { "Massive Ruby Discovered" }
 puts separator
