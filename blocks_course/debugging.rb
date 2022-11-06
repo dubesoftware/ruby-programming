@@ -33,3 +33,5 @@ puts separator
 
 with_expectation(4) { 2 + 2 }
 puts separator
+
+time_it("Sleepy code") { sleep(1) }
