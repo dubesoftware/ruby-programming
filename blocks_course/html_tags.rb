@@ -12,6 +12,11 @@ def h2
   "<h2>#{content}</h2>"
 end
 
+def generate_tag(tag)
+  content = yield
+  "<#{tag}>#{content}</#{tag}>"
+end
+
 puts "Generate h1 tag:"
 puts h1 { "Breaking News!" }
 puts separator
