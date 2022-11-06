@@ -12,9 +12,9 @@ def h2
   "<h2>#{content}</h2>"
 end
 
-def tag(tag)
+def tag(name)
   content = yield
-  "<#{tag}>#{content}</#{tag}>"
+  "<#{name}>#{content}</#{name}>"
 end
 
 puts "Generate h1 tag:"
