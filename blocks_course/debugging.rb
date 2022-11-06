@@ -1,3 +1,4 @@
+require 'benchmark'
 require_relative 'utilities'
 
 separator = Utilities::separator
@@ -20,9 +21,9 @@ def with_expectation(expected_value)
 end
 
 def time_it(description)
-  start_time = Time.now
-  yield
-  elapsed_time = Time.now - start_time
+  elapsed_time = Benchmark::realtime do
+    yield
+  end
   puts "#{description} took #{elapsed_time}"
 end
 
