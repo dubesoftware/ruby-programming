@@ -7,6 +7,11 @@ def h1
   "<h1>#{content}</h1>"
 end
 
+def h2
+  content = yield
+  "<h2>#{content}</h2>"
+end
+
 puts "Generate h1 tag:"
 puts h1 { "Breaking news!" }
 puts separator
