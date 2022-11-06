@@ -20,11 +20,11 @@ def with_expectation(expected_value)
   end
 end
 
-def time_it(description)
+def time_it(name)
   elapsed_time = Benchmark::realtime do
     yield
   end
-  puts "#{description} took #{elapsed_time}"
+  puts "#{name} took #{elapsed_time}"
 end
 
 with_debugging do
