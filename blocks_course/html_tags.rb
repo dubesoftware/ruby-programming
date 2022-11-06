@@ -12,15 +12,15 @@ def h2
   "<h2>#{content}</h2>"
 end
 
-def generate_tag(tag)
+def tag(tag)
   content = yield
   "<#{tag}>#{content}</#{tag}>"
 end
 
 puts "Generate h1 tag:"
-puts generate_tag("h1") { "Breaking News!" }
+puts tag("h1") { "Breaking News!" }
 puts separator
 
 puts "Generate h2 tag:"
-puts generate_tag("h2") { "Massive Ruby Discovered" }
+puts tag("h2") { "Massive Ruby Discovered" }
 puts separator
