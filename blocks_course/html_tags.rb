@@ -18,9 +18,9 @@ def tag(tag)
 end
 
 puts "Generate h1 tag:"
-puts tag("h1") { "Breaking News!" }
+puts tag(:h1) { "Breaking News!" }
 puts separator
 
 puts "Generate h2 tag:"
-puts tag("h2") { "Massive Ruby Discovered" }
+puts tag(:h2) { "Massive Ruby Discovered" }
 puts separator
