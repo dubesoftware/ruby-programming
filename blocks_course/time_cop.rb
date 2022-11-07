@@ -19,7 +19,7 @@ Timeout.timeout(2.0) do
 end
 puts separator
 
-puts "Example timeout with with duration 2.0 and sleep 3.0:"
+puts "Example timeout with with duration 2.0 and sleep 0.3:"
 puts separator
 Timeout.timeout(2.0) do
   sleep 0.3
