@@ -84,17 +84,3 @@ driver.execute("SELECT * FROM ORDERS")
 driver.execute("SELECT * FROM USERS")
 driver.disconnect
 puts separator
-
-puts "Transaction example:"
-puts separator
-DatabaseDriver.open("my_database", "admin", "secret") do |driver|
-  driver.transactionally do
-    driver.execute("UPDATE ORDERS SET status='completed'")
-    driver.execute("DELETE * FROM SHIPPING_QUEUE")
-  end
-
-  # not run in a transaction
-  driver.execute("SELECT * FROM ORDERS")
-  driver.execute("SELECT * FROM USERS")
-end
-puts separator
