@@ -10,3 +10,11 @@ Timeout.timeout(2.0) do
   puts "That was refreshing..."
 end
 puts separator
+
+puts "Example timeout with with duration 2.0 and sleep 3.0:"
+puts separator
+Timeout.timeout(2.0) do
+  sleep 3.0
+  puts "That was refreshing..."
+end
+puts separator
