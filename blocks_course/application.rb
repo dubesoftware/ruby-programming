@@ -8,6 +8,8 @@ class Application
   def in_production
     old_environment = @environment
     yield
+  rescue Exception => e
+    puts e.message
   ensure
     @environment = old_environment
     puts "Reset environment to #{environment}"
