@@ -15,3 +15,6 @@ class Canvas
     "#{@width}x#{@height} #{@color} canvas"
   end
 end
+
+canvas = Canvas.new
+puts canvas
