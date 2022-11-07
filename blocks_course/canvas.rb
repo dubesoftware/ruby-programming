@@ -1,3 +1,5 @@
+require_relative 'utilities'
+
 class Canvas
   attr_accessor :width, :height, :color
 
@@ -16,12 +18,15 @@ class Canvas
   end
 end
 
+separator = Utilities::separator
+
 puts "Override defaults by assigning new values the traditional way:"
 canvas = Canvas.new
 canvas.width = 250
 canvas.height = 500
 canvas.color = :blue
 puts canvas
+puts separator
 
 puts "Initialize a new canvas using a block:"
 canvas = Canvas.new do |c|
@@ -30,3 +35,4 @@ canvas = Canvas.new do |c|
   c.color = :green
 end
 puts canvas
+puts separator
