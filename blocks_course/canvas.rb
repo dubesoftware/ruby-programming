@@ -22,3 +22,11 @@ canvas.width = 250
 canvas.height = 500
 canvas.color = :blue
 puts canvas
+
+puts "Initialize a new canvas using a block:"
+canvas = Canvas.new do |c|
+  c.width = 800
+  c.height = 600
+  c.color = :green
+end
+puts canvas
