@@ -32,6 +32,17 @@ class SportyClient
       sign_out(user)
     end
   end
+  
+  def self.open(user)
+    client = self.new
+    client.sign_in(user)
+    return client unless block_given?
+    begin
+      yield client
+    ensure
+      client.sign_out(user)
+    end
+  end
 end
 
 separator = Utilities::separator
