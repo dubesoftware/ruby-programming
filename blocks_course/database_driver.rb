@@ -26,12 +26,12 @@ class DatabaseDriver
   end
   
   def self.open(database, user, password)
-    database_driver = self.new(database, user, password)
-    database_driver.connect
+    driver = self.new(database, user, password)
+    driver.connect
     begin
-      yield database_driver
+      yield driver
     ensure
-      database_driver.disconnect
+      driver.disconnect
     end
   end
 end
