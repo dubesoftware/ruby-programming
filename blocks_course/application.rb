@@ -6,9 +6,10 @@ class Application
   end
   
   def in_production
-    @environment = :production
+    old_environment = @environment
     yield
-    @environment = :development
+    @environment = old_environment
+    puts "Reset environment to #{environment}"
   end
 
   def connect_to_database
@@ -30,4 +31,3 @@ app.in_production do
   app.handle_request
   app.write_to_log
 end
-puts app.environment
