@@ -26,8 +26,11 @@ class SportyClient
   
   def as_signed_in_user(user)
     sign_in(user)
-    yield
-    sign_out(user)
+    begin
+      yield
+    ensure
+      sign_out(user)
+    end
   end
 end
 
