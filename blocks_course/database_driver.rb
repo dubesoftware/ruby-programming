@@ -61,7 +61,7 @@ puts "Double-check that the driver connection is always closed, even if the bloc
 puts separator
 DatabaseDriver.open("my_database", "admin", "secret") do |driver|
   driver.execute("DELETE * FROM ORDERS")
-  raise "Boom!"
+  # raise "Boom!"
   driver.execute("DELETE * FROM USERS")
 end
 puts separator
