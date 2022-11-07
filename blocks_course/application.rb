@@ -1,11 +1,18 @@
+require_relative 'utilities'
+
 class Application
+  include Utilities
+  
   attr_accessor :environment
 
   def initialize
     @environment = :development
+    @separator = Utilities::separator
   end
   
   def in_environment(new_environment)
+    puts "Run code in #{new_environment} environment:"
+    puts @separator
     old_environment = @environment
     @environment = new_environment
     yield
@@ -14,6 +21,7 @@ class Application
   ensure
     @environment = old_environment
     puts "Reset environment to #{environment}"
+    puts @separator
   end
 
   def connect_to_database
