@@ -5,8 +5,9 @@ class Application
     @environment = :development
   end
   
-  def in_production
+  def in_environment(new_environment)
     old_environment = @environment
+    @environment = new_environment
     yield
   rescue Exception => e
     puts e.message
