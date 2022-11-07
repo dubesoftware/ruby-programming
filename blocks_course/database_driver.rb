@@ -48,7 +48,9 @@ driver.execute("SELECT * FROM USERS")
 driver.disconnect
 puts separator
 
-# DatabaseDriver.open("my_database", "admin", "secret") do |driver|
-#   driver.execute("SELECT * FROM ORDERS")
-#   driver.execute("SELECT * FROM USERS")
-# end
+puts "Test open class method:"
+puts separator
+DatabaseDriver.open("my_database", "admin", "secret") do |driver|
+  driver.execute("SELECT * FROM ORDERS")
+  driver.execute("SELECT * FROM USERS")
+end
