@@ -50,11 +50,11 @@ class DatabaseDriver
   
   def transactionally
     begin
-      puts "Beginning transaction..."
+      begin_transaction
       yield
-      puts "Committed transaction."
+      commit_transaction
     rescue
-      puts "Rolled back transaction!"
+      rollback_transaction
     ensure
     end
   end
