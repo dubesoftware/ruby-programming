@@ -53,7 +53,7 @@ class DatabaseDriver
       begin_transaction
       yield
       commit_transaction
-    rescue
+    rescue Exception => e
       rollback_transaction
     ensure
     end
