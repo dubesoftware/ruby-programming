@@ -82,7 +82,7 @@ SportyClient.open("broncos_fan") do |client|
 end
 puts separator
 
-puts "Optionally, call SportyClient.open method without a block just to get a signed-in client that they explicitly sign out at the end:"
+puts "Optionally, call SportyClient.open method without a block and get a signed-in client to explicitly sign out at the end:"
 puts separator
 client = SportyClient.open("broncos_fan")
 client.post("Ready for the new season...")
