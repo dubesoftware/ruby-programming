@@ -36,18 +36,6 @@ class DatabaseDriver
     end
   end
   
-  def begin_transaction
-    puts "Beginning transaction..."
-  end
-
-  def commit_transaction
-    puts "Committed transaction."
-  end
-
-  def rollback_transaction
-    puts "Rolled back transaction!"
-  end
-  
   def transactionally
     begin
       puts "Beginning transaction..."
