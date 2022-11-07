@@ -54,3 +54,13 @@ DatabaseDriver.open("my_database", "admin", "secret") do |driver|
   driver.execute("SELECT * FROM ORDERS")
   driver.execute("SELECT * FROM USERS")
 end
+puts separator
+
+puts "Double-check that the driver connection is always closed, even if the block raises an exception:"
+puts separator
+DatabaseDriver.open("my_database", "admin", "secret") do |driver|
+  driver.execute("DELETE * FROM ORDERS")
+  raise "Boom!"
+  driver.execute("DELETE * FROM USERS")
+end
+puts separator
