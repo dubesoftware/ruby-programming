@@ -98,3 +98,14 @@ DatabaseDriver.open("my_database", "admin", "secret") do |driver|
   driver.execute("SELECT * FROM USERS")
 end
 puts separator
+
+puts "Handle the case where an exception is raised in the transactionally block:"
+puts separator
+DatabaseDriver.open("my_database", "admin", "secret") do |driver|
+  driver.transactionally do
+    driver.execute("UPDATE ORDERS SET status='completed'")
+    raise "Boom!"
+    driver.execute("DELETE * FROM SHIPPING_QUEUE")
+  end
+end
+puts separator
