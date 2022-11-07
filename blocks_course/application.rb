@@ -4,6 +4,12 @@ class Application
   def initialize
     @environment = :development
   end
+  
+  def in_production
+    @environment = :production
+    yield
+    @environment = :development
+  end
 
   def connect_to_database
     puts "Connecting to #{@environment} database..."
