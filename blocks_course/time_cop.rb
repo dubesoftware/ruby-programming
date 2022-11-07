@@ -34,3 +34,11 @@ try_with_timeout(2.0) do
   puts "That was refreshing..."
 end
 puts separator
+
+puts "Call try_with_timeout with sleep shorter than timeout duration:"
+puts separator
+try_with_timeout(2.0) do
+  sleep 1.0
+  puts "That was refreshing..."
+end
+puts separator
