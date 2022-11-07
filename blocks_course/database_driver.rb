@@ -35,6 +35,17 @@ class DatabaseDriver
       driver.disconnect
     end
   end
+  
+  def transactionally
+    begin
+      puts "Beginning transaction..."
+      yield
+      puts "Committed transaction."
+    rescue
+      puts "Rolled back transaction!"
+    ensure
+    end
+  end
 end
 
 separator = Utilities::separator
