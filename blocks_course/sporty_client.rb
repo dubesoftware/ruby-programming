@@ -42,3 +42,12 @@ client.post("Broncos are going all the way!")
 client.timeline
 client.sign_out("broncos_fan")
 puts separator
+
+puts "Test as_signed_in_user method:"
+puts separator
+client.as_signed_in_user("broncos_fan") do
+  client.post("Ready for the new season...")
+  client.post("Broncos are going all the way!")
+  client.timeline
+end
+puts separator
