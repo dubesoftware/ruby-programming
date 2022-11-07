@@ -30,9 +30,16 @@ class Application
 end
 
 app = Application.new
-app.in_production do
+
+app.in_environment(:production) do
   app.connect_to_database
   app.handle_request
   raise "Boom!"
+  app.write_to_log
+end
+
+app.in_environment(:test) do
+  app.connect_to_database
+  app.handle_request
   app.write_to_log
 end
