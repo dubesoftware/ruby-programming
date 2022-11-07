@@ -3,8 +3,10 @@ require_relative 'utilities'
 
 def try_with_timeout(duration)  
   begin
-    yield
-  rescue
+    Timeout.timeout(duration) do
+      yield
+    end
+  rescue Timeout::Error
     puts "Took too long!"
   end
 end
@@ -40,5 +42,13 @@ puts separator
 try_with_timeout(2.0) do
   sleep 1.0
   puts "That was refreshing..."
+end
+puts separator
+
+puts "Call try_with_timeout with sleep longer than timeout duration:"
+puts separator
+try_with_timeout(2.0) do
+  sleep 3.0
+  puts "Yawn..."
 end
 puts separator
