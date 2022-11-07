@@ -16,5 +16,9 @@ class Canvas
   end
 end
 
+puts "Override defaults by assigning new values the traditional way:"
 canvas = Canvas.new
+canvas.width = 250
+canvas.height = 500
+canvas.color = :blue
 puts canvas
