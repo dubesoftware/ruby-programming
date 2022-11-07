@@ -22,3 +22,11 @@ class SportyClient
     puts "#{user} signed out!"
   end
 end
+
+client = SportyClient.new
+
+client.sign_in("broncos_fan")
+client.post("Ready for the new season...")
+client.post("Broncos are going all the way!")
+client.timeline
+client.sign_out("broncos_fan")
