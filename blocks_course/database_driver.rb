@@ -24,6 +24,16 @@ class DatabaseDriver
     puts "Executing #{sql}..."
     # executes SQL
   end
+  
+  def self.open(database, user, password)
+    database_driver = self.new(database, user, password)
+    database_driver.connect
+    begin
+      yield database_driver
+    ensure
+      database_driver.disconnect
+    end
+  end
 end
 
 separator = Utilities::separator
@@ -37,3 +47,8 @@ driver.execute("SELECT * FROM ORDERS")
 driver.execute("SELECT * FROM USERS")
 driver.disconnect
 puts separator
+
+# DatabaseDriver.open("my_database", "admin", "secret") do |driver|
+#   driver.execute("SELECT * FROM ORDERS")
+#   driver.execute("SELECT * FROM USERS")
+# end
