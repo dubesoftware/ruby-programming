@@ -71,3 +71,13 @@ client.as_signed_in_user("seahawker") do
   client.post("Not if we can help it...")
   # raise "Boo! Hiss!"
 end
+puts separator
+
+puts "Call SportyClient.open method with a block to get automatic sign-in and sign-out:"
+puts separator
+SportyClient.open("broncos_fan") do |client|
+  client.post("Ready for the new season...")
+  client.post("Broncos are going all the way!")
+  client.timeline
+end
+puts separator
