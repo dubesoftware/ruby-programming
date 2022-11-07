@@ -27,3 +27,13 @@ class DatabaseDriver
 end
 
 separator = Utilities::separator
+
+puts "To run a couple SQL queries, call the methods in the proper order:"
+puts separator
+driver = DatabaseDriver.new("my_database", "admin", "secret")
+
+driver.connect
+driver.execute("SELECT * FROM ORDERS")
+driver.execute("SELECT * FROM USERS")
+driver.disconnect
+puts separator
