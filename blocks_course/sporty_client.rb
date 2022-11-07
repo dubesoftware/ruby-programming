@@ -54,3 +54,9 @@ client.as_signed_in_user("broncos_fan") do
   client.timeline
 end
 puts separator
+
+puts "Test that the user is always signed out as the last step:"
+client.as_signed_in_user("seahawker") do
+  client.post("Not if we can help it...")
+  raise "Boo! Hiss!"
+end
