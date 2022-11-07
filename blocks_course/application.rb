@@ -25,6 +25,9 @@ class Application
 end
 
 app = Application.new
-app.connect_to_database
-app.handle_request
-app.write_to_log
+app.in_production do
+  app.connect_to_database
+  app.handle_request
+  app.write_to_log
+end
+puts app.environment
