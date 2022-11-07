@@ -23,6 +23,12 @@ class SportyClient
     # sign out of remote service
     puts "#{user} signed out!"
   end
+  
+  def as_signed_in_user(user)
+    sign_in(user)
+    yield
+    sign_out(user)
+  end
 end
 
 separator = Utilities::separator
