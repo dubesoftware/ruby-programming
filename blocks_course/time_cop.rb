@@ -23,7 +23,7 @@ puts "Example timeout with with duration 2.0 and sleep 0.3:"
 puts separator
 Timeout.timeout(2.0) do
   sleep 0.3
-  puts "That was refreshing..."
+  puts "That was almost refreshing..."
 end
 puts separator
 
