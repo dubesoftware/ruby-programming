@@ -1,3 +1,5 @@
+require_relative 'utilities'
+
 class DatabaseDriver
   def initialize(database, user, password)
     @database = database
@@ -23,3 +25,5 @@ class DatabaseDriver
     # executes SQL
   end
 end
+
+separator = Utilities::separator
